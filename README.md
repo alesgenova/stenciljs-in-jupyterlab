@@ -12,44 +12,32 @@ npm install
 jupyter labextension link .
 ```
 
-Obtain a webpack error due to circular dependencies
+Obtain a typescript error on build
 ```
-$ webpack
-/home/alessandro/anaconda3/envs/jupyterlab-ext/share/jupyter/lab/staging/node_modules/toposort/index.js:35
-      throw new Error('Cyclic dependency' + nodeRep)
-      ^
+> tsc
 
-Error: Cyclic dependency
-    at visit (/home/alessandro/anaconda3/envs/jupyterlab-ext/share/jupyter/lab/staging/node_modules/toposort/index.js:35:13)
-    at visit (/home/alessandro/anaconda3/envs/jupyterlab-ext/share/jupyter/lab/staging/node_modules/toposort/index.js:53:9)
-    at visit (/home/alessandro/anaconda3/envs/jupyterlab-ext/share/jupyter/lab/staging/node_modules/toposort/index.js:53:9)
-    at Function.toposort [as array] (/home/alessandro/anaconda3/envs/jupyterlab-ext/share/jupyter/lab/staging/node_modules/toposort/index.js:22:22)
-    at Object.module.exports.dependency (/home/alessandro/anaconda3/envs/jupyterlab-ext/share/jupyter/lab/staging/node_modules/html-webpack-plugin/lib/chunksorter.js:50:35)
-    at HtmlWebpackPlugin.sortChunks (/home/alessandro/anaconda3/envs/jupyterlab-ext/share/jupyter/lab/staging/node_modules/html-webpack-plugin/index.js:364:35)
-    at /home/alessandro/anaconda3/envs/jupyterlab-ext/share/jupyter/lab/staging/node_modules/html-webpack-plugin/index.js:113:21
-    at _err0 (eval at create (/home/alessandro/anaconda3/envs/jupyterlab-ext/share/jupyter/lab/staging/node_modules/tapable/lib/HookCodeFactory.js:32:10), <anonymous>:12:1)
-    at /home/alessandro/anaconda3/envs/jupyterlab-ext/share/jupyter/lab/staging/node_modules/duplicate-package-checker-webpack-plugin/lib/index.js:190:5
-    at AsyncSeriesHook.eval [as callAsync] (eval at create (/home/alessandro/anaconda3/envs/jupyterlab-ext/share/jupyter/lab/staging/node_modules/tapable/lib/HookCodeFactory.js:32:10), <anonymous>:7:1)
-    at AsyncSeriesHook.lazyCompileHook (/home/alessandro/anaconda3/envs/jupyterlab-ext/share/jupyter/lab/staging/node_modules/tapable/lib/Hook.js:154:20)
-    at Compiler.emitAssets (/home/alessandro/anaconda3/envs/jupyterlab-ext/share/jupyter/lab/staging/node_modules/webpack/lib/Compiler.js:311:19)
-    at onCompiled (/home/alessandro/anaconda3/envs/jupyterlab-ext/share/jupyter/lab/staging/node_modules/webpack/lib/Compiler.js:178:9)
-    at hooks.afterCompile.callAsync.err (/home/alessandro/anaconda3/envs/jupyterlab-ext/share/jupyter/lab/staging/node_modules/webpack/lib/Compiler.js:500:14)
-    at AsyncSeriesHook.eval [as callAsync] (eval at create (/home/alessandro/anaconda3/envs/jupyterlab-ext/share/jupyter/lab/staging/node_modules/tapable/lib/HookCodeFactory.js:32:10), <anonymous>:15:1)
-    at AsyncSeriesHook.lazyCompileHook (/home/alessandro/anaconda3/envs/jupyterlab-ext/share/jupyter/lab/staging/node_modules/tapable/lib/Hook.js:154:20)
-    at compilation.seal.err (/home/alessandro/anaconda3/envs/jupyterlab-ext/share/jupyter/lab/staging/node_modules/webpack/lib/Compiler.js:497:30)
-    at AsyncSeriesHook.eval [as callAsync] (eval at create (/home/alessandro/anaconda3/envs/jupyterlab-ext/share/jupyter/lab/staging/node_modules/tapable/lib/HookCodeFactory.js:32:10), <anonymous>:6:1)
-    at AsyncSeriesHook.lazyCompileHook (/home/alessandro/anaconda3/envs/jupyterlab-ext/share/jupyter/lab/staging/node_modules/tapable/lib/Hook.js:154:20)
-    at hooks.optimizeAssets.callAsync.err (/home/alessandro/anaconda3/envs/jupyterlab-ext/share/jupyter/lab/staging/node_modules/webpack/lib/Compilation.js:986:35)
-    at AsyncSeriesHook.eval [as callAsync] (eval at create (/home/alessandro/anaconda3/envs/jupyterlab-ext/share/jupyter/lab/staging/node_modules/tapable/lib/HookCodeFactory.js:32:10), <anonymous>:6:1)
-    at AsyncSeriesHook.lazyCompileHook (/home/alessandro/anaconda3/envs/jupyterlab-ext/share/jupyter/lab/staging/node_modules/tapable/lib/Hook.js:154:20)
-    at hooks.optimizeChunkAssets.callAsync.err (/home/alessandro/anaconda3/envs/jupyterlab-ext/share/jupyter/lab/staging/node_modules/webpack/lib/Compilation.js:977:32)
-    at AsyncSeriesHook.eval [as callAsync] (eval at create (/home/alessandro/anaconda3/envs/jupyterlab-ext/share/jupyter/lab/staging/node_modules/tapable/lib/HookCodeFactory.js:32:10), <anonymous>:6:1)
-    at AsyncSeriesHook.lazyCompileHook (/home/alessandro/anaconda3/envs/jupyterlab-ext/share/jupyter/lab/staging/node_modules/tapable/lib/Hook.js:154:20)
-    at hooks.additionalAssets.callAsync.err (/home/alessandro/anaconda3/envs/jupyterlab-ext/share/jupyter/lab/staging/node_modules/webpack/lib/Compilation.js:972:36)
-    at AsyncSeriesHook.eval [as callAsync] (eval at create (/home/alessandro/anaconda3/envs/jupyterlab-ext/share/jupyter/lab/staging/node_modules/tapable/lib/HookCodeFactory.js:32:10), <anonymous>:6:1)
-    at AsyncSeriesHook.lazyCompileHook (/home/alessandro/anaconda3/envs/jupyterlab-ext/share/jupyter/lab/staging/node_modules/tapable/lib/Hook.js:154:20)
-    at hooks.optimizeTree.callAsync.err (/home/alessandro/anaconda3/envs/jupyterlab-ext/share/jupyter/lab/staging/node_modules/webpack/lib/Compilation.js:968:32)
-    at AsyncSeriesHook.eval [as callAsync] (eval at create (/home/alessandro/anaconda3/envs/jupyterlab-ext/share/jupyter/lab/staging/node_modules/tapable/lib/HookCodeFactory.js:32:10), <anonymous>:6:1)
-error Command failed with exit code 1.
+node_modules/split-me/dist/types/components.d.ts:8:45 - error TS2307: Cannot find module './stencil.core'.
 
+8 import { HTMLStencilElement, JSXBase } from './stencil.core';
+                                              ~~~~~~~~~~~~~~~~
+
+node_modules/typescript/lib/lib.dom.d.ts:4617:101 - error TS2344: Type 'HTMLElementTagNameMap[K]' does not satisfy the constraint 'Element'.
+  Type 'HTMLElement | HTMLCanvasElement | HTMLImageElement | HTMLVideoElement | HTMLAnchorElement | HTMLAppletElement | HTMLScriptElement | HTMLEmbedElement | HTMLFormElement | ... 63 more ... | HTMLSplitMeElement' is not assignable to type 'Element'.
+    Type 'HTMLSplitMeElement' is missing the following properties from type 'Element': assignedSlot, attributes, classList, className, and 123 more.
+
+4617     getElementsByTagName<K extends keyof HTMLElementTagNameMap>(qualifiedName: K): HTMLCollectionOf<HTMLElementTagNameMap[K]>;
+                                                                                                         ~~~~~~~~~~~~~~~~~~~~~~~~
+
+node_modules/typescript/lib/lib.dom.d.ts:4985:101 - error TS2344: Type 'HTMLElementTagNameMap[K]' does not satisfy the constraint 'Element'.
+  Type 'HTMLElement | HTMLCanvasElement | HTMLImageElement | HTMLVideoElement | HTMLAnchorElement | HTMLAppletElement | HTMLScriptElement | HTMLEmbedElement | HTMLFormElement | ... 63 more ... | HTMLSplitMeElement' is not assignable to type 'Element'.
+    Type 'HTMLSplitMeElement' is not assignable to type 'Element'.
+
+4985     getElementsByTagName<K extends keyof HTMLElementTagNameMap>(qualifiedName: K): HTMLCollectionOf<HTMLElementTagNameMap[K]>;
+                                                                                                         ~~~~~~~~~~~~~~~~~~~~~~~~
+
+node_modules/typescript/lib/lib.dom.d.ts:11185:87 - error TS2344: Type 'HTMLElementTagNameMap[K]' does not satisfy the constraint 'Node'.
+  Type 'HTMLElement | HTMLCanvasElement | HTMLImageElement | HTMLVideoElement | HTMLAnchorElement | HTMLAppletElement | HTMLScriptElement | HTMLEmbedElement | HTMLFormElement | ... 63 more ... | HTMLSplitMeElement' is not assignable to type 'Node'.
+    Type 'HTMLSplitMeElement' is missing the following properties from type 'Node': baseURI, childNodes, firstChild, isConnected, and 47 more.
+
+11185     querySelectorAll<K extends keyof HTMLElementTagNameMap>(selectors: K): NodeListOf<HTMLElementTagNameMap[K]>;
 ```

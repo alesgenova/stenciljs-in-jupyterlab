@@ -6,7 +6,7 @@ import { JSONObject } from '@phosphor/coreutils';
 
 import { Widget } from '@phosphor/widgets';
 
-import { defineCustomElements } from 'split-me/dist/loader';
+import { defineCustomElements } from 'split-me/loader';
 
 import '../style/index.css';
 
